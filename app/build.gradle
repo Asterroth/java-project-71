@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'application'
     id 'checkstyle'
+    id 'jacoco'
 }
 
 application {
@@ -16,6 +17,7 @@ repositories {
 }
 
 dependencies {
+    implementation 'info.picocli:picocli:4.6.3'
     testImplementation platform('org.junit:junit-bom:5.9.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }
@@ -31,3 +33,5 @@ compileJava {
 run {
     standardInput = System.in
 }
+
+tasks.jacocoTestReport { reports { xml.required.set(true) } }
