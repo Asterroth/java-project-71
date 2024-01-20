@@ -5,18 +5,28 @@ import picocli.CommandLine.Option;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Parameters;
 
-@CommandLine.Command(name = "getDiff", mixinStandardHelpOptions = true, version = "getDiff 1.0",
-        description = "Compares two configuration files and shows a difference.")
+@Command(
+        name = "gendiff",
+        mixinStandardHelpOptions = true,
+        version = "gendiff 1.0-alpha",
+        description = "Compares two configuration files and shows a difference."
+)
 
-public class App {
+public class App implements Runnable {
 
     @Option(names = {"-h", "--help"}, usageHelp = true, description = "Show this help message and exit.")
-    private boolean usageHelpRequested;
+    private boolean usageHelp;
     @Option(names = {"-V", "--version"}, versionHelp = true,
             description = "Print version information and exit.")
-    private boolean versionInfoRequested;
+    private boolean versionInfo;
 
     public static void main(String[] args) {
+        int exitCode = new CommandLine(new App()).execute(args);
+        System.exit(exitCode);
+    }
+
+    @Override
+    public void run() {
         System.out.println("Hello World!");
     }
 }
