@@ -14,11 +14,15 @@ version = '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+    maven {
+        url "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/"
+    }
 }
 
 dependencies {
     implementation 'info.picocli:picocli:4.6.3'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.0'
+    compileOnly 'org.projectlombok:lombok:1.18.30'
     testImplementation platform('org.junit:junit-bom:5.9.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }
