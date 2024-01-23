@@ -39,4 +39,8 @@ run {
     standardInput = System.in
 }
 
+checkstyle {
+    toolVersion '9.2.1'
+}
+
 tasks.jacocoTestReport { reports { xml.required.set(true) } }
