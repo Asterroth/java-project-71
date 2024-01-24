@@ -25,8 +25,8 @@ public class Differ {
         File file2 = new File(String.valueOf(path2));
 
         ObjectMapper mapper = new ObjectMapper();
-        Map<String, Object> jsonData1 = mapper.readValue(file1, new TypeReference<>(){});
-        Map<String, Object> jsonData2 = mapper.readValue(file2, new TypeReference<>(){});
+        Map<String, Object> jsonData1 = mapper.readValue(file1, new TypeReference<>() { });
+        Map<String, Object> jsonData2 = mapper.readValue(file2, new TypeReference<>() { });
 
         SortedSet<String> totalKeys = new TreeSet<>(jsonData1.keySet());
         totalKeys.addAll(jsonData2.keySet());
