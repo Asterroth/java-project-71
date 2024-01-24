@@ -46,4 +46,8 @@ checkstyle {
     toolVersion '10.12.7'
 }
 
-tasks.jacocoTestReport { reports { xml.required.set(true) } }
+tasks.jacocoTestReport {
+    reports {
+        xml.required.set(true)
+    }
+}
