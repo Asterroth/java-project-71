@@ -18,8 +18,8 @@ jobs:
         with:
           gradle-version: 8.5
           build-root-directory: app
-      - run: ./gradlew checkstyleMain
-      - run: ./gradlew test
+      - run: make checkstyleMain
+      - run: make test
       - name: Publish code coverage
         uses: paambaati/codeclimate-action@v5.0.0
         env:
