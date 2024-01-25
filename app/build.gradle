@@ -22,8 +22,9 @@ repositories {
 dependencies {
     implementation (
             'info.picocli:picocli:4.7.1',
-            'com.fasterxml.jackson.core:jackson-databind:2.9.10.8',
-            'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.14.2'
+            'com.fasterxml.jackson.core:jackson-databind:2.15.0',
+            'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.14.2',
+            'commons-io:commons-io:2.7'
     )
     compileOnly 'org.projectlombok:lombok:1.18.30'
     testImplementation platform('org.junit:junit-bom:5.9.1')

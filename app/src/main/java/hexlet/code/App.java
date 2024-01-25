@@ -53,7 +53,7 @@ public class App implements Callable {
     }
 
     @Override
-    public Integer call() throws IOException {
+    public Integer call() throws Exception {
         String result = Differ.generate(pathToFile1, pathToFile2);
         System.out.println(result);
         return 0;

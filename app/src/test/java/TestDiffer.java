@@ -2,8 +2,6 @@ import hexlet.code.Differ;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -14,7 +12,7 @@ public class TestDiffer {
                 .toAbsolutePath().normalize();
     }
     @Test
-    void differTest() throws IOException {
+    void differTest() throws Exception {
         String resultJson = "{\n"
                 + " - follow: false\n"
                 + "   host: hexlet.io\n"
