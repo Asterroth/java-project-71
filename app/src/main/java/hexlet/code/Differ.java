@@ -16,16 +16,6 @@ public class Differ {
         List<String> resultList = new ArrayList<>();
         StringBuilder result = new StringBuilder();
 
-//        Path path1 = Paths.get(pathToFile1).toAbsolutePath().normalize();
-//        Path path2 = Paths.get(pathToFile2).toAbsolutePath().normalize();
-//
-//        File file1 = new File(String.valueOf(path1));
-//        File file2 = new File(String.valueOf(path2));
-//
-//        ObjectMapper mapper = new ObjectMapper();
-//        Map<String, Object> jsonData1 = mapper.readValue(file1, new TypeReference<>() { });
-//        Map<String, Object> jsonData2 = mapper.readValue(file2, new TypeReference<>() { });
-
         Map<String, Object> data1 = getData(pathToFile1);
         Map<String, Object> data2 = getData(pathToFile2);
 
