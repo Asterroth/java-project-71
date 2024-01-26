@@ -4,11 +4,8 @@ import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.SortedSet;
-import java.util.TreeSet;
+import java.util.*;
+
 import org.apache.commons.io.FilenameUtils;
 
 public class Differ {
@@ -26,7 +23,7 @@ public class Differ {
             Object value1 = data1.get(key);
             Object value2 = data2.get(key);
             if (data1.containsKey(key) && data2.containsKey(key)) {
-                if (value1.equals(value2)) {
+                if (Objects.equals(value1, value2)) {
                     resultList.add("   " + key + ": " + value1);
                 } else {
                     resultList.add(" - " + key + ": " + value1);
