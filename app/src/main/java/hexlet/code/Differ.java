@@ -1,20 +1,14 @@
 package hexlet.code;
 
-import java.io.File;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.*;
-
-import org.apache.commons.io.FilenameUtils;
 
 public class Differ {
     public static String generate(String pathToFile1, String pathToFile2) throws Exception {
         List<String> resultList = new ArrayList<>();
         StringBuilder result = new StringBuilder();
 
-        Map<String, Object> data1 = getData(pathToFile1);
-        Map<String, Object> data2 = getData(pathToFile2);
+        Map<String, Object> data1 = Parser.getData(pathToFile1);
+        Map<String, Object> data2 = Parser.getData(pathToFile2);
 
         SortedSet<String> totalKeys = new TreeSet<>(data1.keySet());
         totalKeys.addAll(data2.keySet());
@@ -44,15 +38,5 @@ public class Differ {
         result.append("}");
 
         return result.toString();
-    }
-
-    public static Map<String, Object> getData(String pathToFile) throws Exception {
-        Path path = Paths.get(pathToFile).toAbsolutePath().normalize();
-        if (!Files.exists(path)) {
-            throw new Exception("File '" + path + "' does not exist");
-        }
-        File file = new File(String.valueOf(path));
-        String dataFormat = FilenameUtils.getExtension(path.toString());
-        return Parser.parseData(file, dataFormat);
     }
 }
