@@ -72,4 +72,24 @@ public class TestDiffer {
         String path2 = getFixturePath("file4.json").toString();
         assertEquals(resultJson, Differ.generate(path1, path2));
     }
+
+    @Test
+    void differTestPlainText() throws Exception {
+        String resultPlainText = "Property 'chars2' was updated. From [complex value] to false\n" +
+                "Property 'checked' was updated. From false to true\n" +
+                "Property 'default' was updated. From null to [complex value]\n" +
+                "Property 'id' was updated. From 45 to null\n" +
+                "Property 'key1' was removed\n" +
+                "Property 'key2' was added with value: 'value2'\n" +
+                "Property 'numbers2' was updated. From [complex value] to [complex value]\n" +
+                "Property 'numbers3' was removed\n" +
+                "Property 'numbers4' was added with value: [complex value]\n" +
+                "Property 'obj1' was added with value: [complex value]\n" +
+                "Property 'setting1' was updated. From 'Some value' to 'Another value'\n" +
+                "Property 'setting2' was updated. From 200 to 300\n" +
+                "Property 'setting3' was updated. From true to 'none'";
+        String path1 = getFixturePath("file3.json").toString();
+        String path2 = getFixturePath("file4.json").toString();
+        assertEquals(resultPlainText, Differ.generate(path1, path2, "plain"));
+    }
 }
