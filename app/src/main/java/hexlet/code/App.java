@@ -4,8 +4,6 @@ import picocli.CommandLine;
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Parameters;
-
-import java.io.IOException;
 import java.util.concurrent.Callable;
 
 @Command(

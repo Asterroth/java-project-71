@@ -92,4 +92,9 @@ public class TestDiffer {
         String path2 = getFixturePath("file4.json").toString();
         assertEquals(resultPlainText, Differ.generate(path1, path2, "plain"));
     }
+
+    @Test
+    void differJson() throws Exception {
+
+    }
 }
