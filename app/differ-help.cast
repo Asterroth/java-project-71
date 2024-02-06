@@ -1,0 +1,11 @@
+{"version": 2, "width": 120, "height": 32, "timestamp": 1707074783, "env": {"SHELL": "/usr/bin/bash", "TERM": "xterm-256color"}}
+[0.122483, "o", "\u001b]0;am@vostro5568:~/java-project-71/app\u0007"]
+[0.164174, "o", "\u001b[?2004h\r\r\n\u001b[0;34m~/java-project-71/app \u001b[39m( main ?:4 \u001b[31;1m⊘\u001b[0m \u001b[39m)\r\r\n\u001b[32;1m❯\u001b[39m\u001b[0m  "]
+[1.560171, "o", "./build/install/app/bin/app --help"]
+[1.883484, "o", "\r\u001b[C\u001b[C\u001b[C\u001b[3Pasciinema upload json-demo.cast"]
+[2.470871, "o", "\r\u001b[C\u001b[C\u001b[C./build/install/app/bin/app --help"]
+[3.927206, "o", "\r\n\u001b[?2004l\r"]
+[4.22371, "o", "Usage: \u001b[1mgendiff\u001b[21m\u001b[0m [\u001b[33m-hV\u001b[39m\u001b[0m] [\u001b[33m-f\u001b[39m\u001b[0m=\u001b[3mformat\u001b[23m\u001b[0m] \u001b[33mfilepath1\u001b[39m\u001b[0m \u001b[33mfilepath2\u001b[39m\u001b[0m\r\nCompares two configuration files and shows a difference.\r\n\u001b[33m \u001b[39m\u001b[0m     \u001b[33mfilepath1\u001b[39m\u001b[0m         path to first file\r\n\u001b[33m \u001b[39m\u001b[0m     \u001b[33mfilepath2\u001b[39m\u001b[0m         path to second file\r\n  \u001b[33m-f\u001b[39m\u001b[0m, \u001b[33m--format\u001b[39m\u001b[0m=\u001b[3mformat\u001b[23m\u001b[0m   output format [default: stylish]\r\n  \u001b[33m-h\u001b[39m\u001b[0m, \u001b[33m--help\u001b[39m\u001b[0m            Show this help message and exit.\r\n  \u001b[33m-V\u001b[39m\u001b[0m, \u001b[33m--version\u001b[39m\u001b[0m         Print version information and exit.\r\n"]
+[4.241709, "o", "\u001b]0;am@vostro5568:~/java-project-71/app\u0007"]
+[4.286243, "o", "\u001b[?2004h\r\r\n\u001b[0;34m~/java-project-71/app \u001b[39m( main ?:4 \u001b[31;1m⊘\u001b[0m \u001b[39m)\r\r\n\u001b[32;1m❯\u001b[39m\u001b[0m  "]
+[8.310209, "o", "\u001b[?2004l\r\r\nexit\r\n"]
