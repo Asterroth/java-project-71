@@ -9,5 +9,17 @@ Compares two configuration files and shows a difference
 [![Java CI](https://github.com/Asterroth/java-project-71/actions/workflows/main.yml/badge.svg)](https://github.com/Asterroth/java-project-71/actions/workflows/main.yml)
 
 ### Asciinemas
-Help information
+* Usage information
 [![asciicast](https://asciinema.org/a/eJSVwQeNmgpIpdHZE7VRbLrjl.svg)](https://asciinema.org/a/eJSVwQeNmgpIpdHZE7VRbLrjl)
+* Example of comparison of two files with stylish formatted output
+[![asciicast](https://asciinema.org/a/gQzz0Sfr0uFauBC6n0Pda2zB1.svg)](https://asciinema.org/a/gQzz0Sfr0uFauBC6n0Pda2zB1)
+* Plain text output format
+[![asciicast](https://asciinema.org/a/KbsMfUKVdSZTBWv3IvnUNpBJq.svg)](https://asciinema.org/a/KbsMfUKVdSZTBWv3IvnUNpBJq)
+* JSON output format
+[![asciicast](https://asciinema.org/a/00zBDqFUf56tYYIhGdEATU3V4.svg)](https://asciinema.org/a/00zBDqFUf56tYYIhGdEATU3V4)
+
+### Requirements
+* JDK 21
+* Gradle 8.5
+* GNU Make
+
