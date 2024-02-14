@@ -1,41 +1,29 @@
 package hexlet.code;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Map;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-import org.apache.commons.io.FilenameUtils;
 
 public class Parser {
-    public static Map<String, Object> getData(String pathToFile) throws Exception {
-        Path path = Paths.get(pathToFile).toAbsolutePath().normalize();
-        if (!Files.exists(path)) {
-            throw new Exception("File '" + path + "' does not exist");
-        }
-        File file = new File(String.valueOf(path));
-        String dataFormat = FilenameUtils.getExtension(path.toString());
-
+    public static Map<String, Object> parse(String content, String dataFormat) throws Exception {
         return switch (dataFormat) {
-            case "yml", "yaml" -> parseYaml(file);
-            case "json" -> parseJson(file);
+            case "yml", "yaml" -> parseYaml(content);
+            case "json" -> parseJson(content);
             default -> throw new Exception("Unknown format: '" + dataFormat + "'");
         };
     }
 
-    public static Map<String, Object> parseJson(File file) throws IOException {
+    public static Map<String, Object> parseJson(String json) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
-        return objectMapper.readValue(file, new TypeReference<>() {
+        return objectMapper.readValue(json, new TypeReference<>() {
         });
     }
 
-    public static Map<String, Object> parseYaml(File file) throws IOException {
+    public static Map<String, Object> parseYaml(String yaml) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-        return mapper.readValue(file, new TypeReference<>() {
+        return mapper.readValue(yaml, new TypeReference<>() {
         });
     }
 }
