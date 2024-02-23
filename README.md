@@ -19,7 +19,7 @@ Compares two configuration files and shows a difference
 [![asciicast](https://asciinema.org/a/00zBDqFUf56tYYIhGdEATU3V4.svg)](https://asciinema.org/a/00zBDqFUf56tYYIhGdEATU3V4)
 
 ### Requirements
-* JDK 21
+* JDK 20
 * Gradle 8.5
 * GNU Make
 
