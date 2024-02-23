@@ -16,17 +16,6 @@ import java.util.concurrent.Callable;
 public final class App implements Callable<Integer> {
     private static final int SUCCESS_EXIT_CODE = 0;
     private static final int ERROR_EXIT_CODE = 1;
-    @Option(names = {"-h", "--help"},
-            usageHelp = true,
-            description = "Show this help message and exit."
-    )
-    private boolean usageHelp;
-
-    @Option(names = {"-V", "--version"},
-            versionHelp = true,
-            description = "Print version information and exit."
-    )
-    private boolean versionInfo;
 
     @Option(names = {"-f", "--format"},
             paramLabel = "format",
@@ -36,14 +25,14 @@ public final class App implements Callable<Integer> {
     private String format;
 
     @Parameters(index = "0",
-            paramLabel = "filepath1",
-            description = "path to first file"
+                paramLabel = "filepath1",
+                description = "path to first file"
     )
     private String pathToFile1;
 
     @Parameters(index = "1",
-            paramLabel = "filepath2",
-            description = "path to second file")
+                paramLabel = "filepath2",
+                description = "path to second file")
     private String pathToFile2;
 
     public static void main(String[] args) {
