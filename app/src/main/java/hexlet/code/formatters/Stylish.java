@@ -51,7 +51,7 @@ public class Stylish {
         return result.toString();
     }
 
-    private static String buildPrefix (String status) {
+    private static String buildPrefix(String status) {
         StringBuilder prefix = new StringBuilder();
         switch (status) {
             case "added" -> prefix.append("  + ");
