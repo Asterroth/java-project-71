@@ -7,6 +7,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class DiffCalc {
+
     public static Map<String, Map<String, Object>> getDiff(Map<String, Object> data1, Map<String, Object> data2) {
         Map<String, Map<String, Object>> result = new LinkedHashMap<>();
         Set<String> keys = new TreeSet<>(data1.keySet());
@@ -16,24 +17,32 @@ public class DiffCalc {
             Map<String, Object> element = new LinkedHashMap<>();
 
             if (!data1.containsKey(key)) {
-                element.put("status", "added");
+                element.put("type", "added");
                 element.put("value2", data2.get(key));
                 result.put(key, element);
             } else if (!data2.containsKey(key)) {
-                element.put("status", "deleted");
+                element.put("type", "deleted");
                 element.put("value1", data1.get(key));
                 result.put(key, element);
-            } else if (Objects.equals(data1.get(key), data2.get(key))) {
-                element.put("status", "unchanged");
+            } else if (isEqual(data1.get(key), data2.get(key))) {
+                element.put("type", "unchanged");
                 element.put("value1", data1.get(key));
                 result.put(key, element);
             } else {
-                element.put("status", "changed");
+                element.put("type", "changed");
                 element.put("value1", data1.get(key));
                 element.put("value2", data2.get(key));
                 result.put(key, element);
             }
         }
         return result;
+    }
+
+    public static boolean isEqual(Object data1, Object data2) {
+        if (data1 == null || data2 == null) {
+            return data1 == data2;
+        }
+
+        return data1.equals(data2);
     }
 }

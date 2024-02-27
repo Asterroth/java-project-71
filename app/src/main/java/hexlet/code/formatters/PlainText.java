@@ -10,12 +10,12 @@ public class PlainText {
         for (String key: mapDiff.keySet()) {
             Map<String, Object> map = mapDiff.get(key);
 
-            if (map.get("status").equals("added")) {
+            if (map.get("type").equals("added")) {
                 result.append("\nProperty ").append(stringify(key)).append(" was added with value: ").
                         append(stringify(map.get("value2")));
-            } else if (map.get("status").equals("deleted")) {
+            } else if (map.get("type").equals("deleted")) {
                 result.append("\nProperty ").append(stringify(key)).append(" was removed");
-            } else if (map.get("status").equals("changed")) {
+            } else if (map.get("type").equals("changed")) {
                 result.append("\nProperty ").append(stringify(key)).append(" was updated. From ").
                         append(stringify(map.get("value1"))).append(" to ").
                         append(stringify(map.get("value2")));

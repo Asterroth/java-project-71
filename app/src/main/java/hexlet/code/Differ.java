@@ -13,23 +13,27 @@ public class Differ {
     }
 
     public static String generate(String filePath1, String filePath2, String format) throws Exception {
-        Map<String, Object> data1 = getData(filePath1);
-        Map<String, Object> data2 = getData(filePath2);
+        Map<String, Object> data1 = getData(getPath(filePath1));
+        Map<String, Object> data2 = getData(getPath(filePath2));
         Map<String, Map<String, Object>> diffData = DiffCalc.getDiff(data1, data2);
 
         return Formatter.selectFormatter(diffData, format);
     }
 
-    public static Map<String, Object> getData(String filePath) throws Exception {
-        Path path = Paths.get(filePath).toAbsolutePath().normalize();
+    public static Map<String, Object> getData(Path filePath) throws Exception {
+        //Path path = Paths.get(filePath).toAbsolutePath().normalize();
 
-        if (!Files.exists(path)) {
-            throw new Exception("File '" + path + "' does not exist");
+        if (!Files.exists(filePath)) {
+            throw new Exception("File '" + filePath + "' does not exist");
         }
 
-        String content = Files.readString(path).trim();
-        String dataFormat = FilenameUtils.getExtension(filePath);
+        String content = Files.readString(filePath).trim();
+        String dataFormat = FilenameUtils.getExtension(filePath.toString());
 
         return Parser.parse(content, dataFormat);
+    }
+
+    public static Path getPath(String filePath) {
+        return Paths.get(filePath).toAbsolutePath().normalize();
     }
 }
