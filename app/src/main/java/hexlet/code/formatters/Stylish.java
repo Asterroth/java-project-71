@@ -35,16 +35,6 @@ public class Stylish {
                             .append("\n");
                 }
             }
-//            if (status.equals("added")) {
-//                result.append("  + ").append(key).append(": ").append(map.get("value2")).append("\n");
-//            } else if (status.equals("deleted")) {
-//                result.append("  - ").append(key).append(": ").append(map.get("value1")).append("\n");
-//            } else if (status.equals("unchanged")) {
-//                result.append("    ").append(key).append(": ").append(map.get("value1")).append("\n");
-//            } else {
-//                result.append("  - ").append(key).append(": ").append(map.get("value1")).append("\n");
-//                result.append("  + ").append(key).append(": ").append(map.get("value2")).append("\n");
-//            }
         }
 
         result.append("}");
